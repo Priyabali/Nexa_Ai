@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    /* Purple gradient background */
+    background: linear-gradient(135deg, #12001f, #2d0a5a, #3d0b68);
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Page container */
+.page-wrapper{
+    width: 85%;
+    max-width: 900px;
+    text-align: center;
+    padding: 35px 25px;
+
+    background: rgba(20, 5, 45, 0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 25px;
+
+    box-shadow: 
+        0 0 20px rgba(146, 88, 255, .4),
+        inset 0 0 20px rgba(60, 20, 120, .3);
+
+    backdrop-filter: blur(10px);
+}
+
+/* Logo */
+#logo{
+    width: 200px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+
+    border: 2px solid #b67bff;
+    box-shadow: 
+        0 0 10px #b67bff,
+        0 0 25px rgba(182,123,255,.4);
+}
+
+/* Main heading */
+h1{
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* BIG Nexa styling */
+#nexa{
+    display: inline-block;
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg, #ffb6ff, #b366ff, #6a00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 8px rgba(174,0,255,.6),
+        0 0 18px rgba(120,0,255,.5),
+        0 0 28px rgba(255,0,255,.4);
+
+    animation: glowText 3s ease-in-out infinite;
+}
+
+@keyframes glowText{
+    0%{ text-shadow: 0 0 6px #b366ff;}
+    50%{ text-shadow: 0 0 16px #ff66ff;}
+    100%{ text-shadow: 0 0 6px #b366ff;}
+}
+
+/* Subtitle */
+.subtitle{
+    font-size: 0.9rem;
+    opacity: .8;
+    margin-top: 6px;
+}
+
+/* Voice container */
+#voice-container{
+    margin: 30px auto;
+    width: 150px;     /* was 165 */
+    height: 150px;    /* was 165 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Nexa picture (made bigger) */
+#voice{
+    width: 120px;     /* was 100 */
+    height: 120px;    /* was 100 */
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 8px #b366ff);
+}
+
+/* pulsing rings */
+#voice-container::before,
+#voice-container::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(185, 140, 255, .4);
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+
+/* Outer pulse rings (slightly smaller) */
+#voice-container::before{
+    width: 135px;    /* was 150 */
+    height: 135px;
+}
+
+#voice-container::after{
+    width: 165px;    /* was 190 */
+    height: 165px;
+    animation-delay: .8s;
+}
+
+
+@keyframes pulse{
+    0%{ transform: scale(.85); opacity:.6;}
+    50%{ transform: scale(1.15); opacity:.25;}
+    100%{ transform: scale(.85); opacity:.6;}
+}
+
+/* Button */
+#btn{
+    padding: 14px 36px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    background: linear-gradient(90deg, #7b3cff, #c76bff);
+    color: white;
+    font-weight: 600;
+
+    box-shadow: 0 0 12px rgba(187,130,255,.7);
+    transition: .25s;
+}
+
+#btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(200,150,255,.9);
+}
+
+#btn img{
+    width: 18px;
+}
+#content{
+    margin-top: 20px;
+    width: 100%;
+    min-height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    color: #f5e8ff;
+
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 14px;
+
+    background: rgba(80, 20, 140, .25);
+    box-shadow: 0 0 14px rgba(150,100,255,.25);
+}/* Button wrapper — centers it */
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
